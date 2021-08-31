@@ -1,0 +1,57 @@
+apiVersion: v1
+data:
+  ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIC5zCCAc+gAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl
+    cm5ldGVzMB4XDTIxMDYxNjA1NDAxMFoXDTMxMDYxNDA1NDAxMFowFTETMBEGA1UE
+    AxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMDO
+    ROn6ynwI6aSBPh92CgzF9TMr246ip49Z+I5AyNBZZbyVhVjsi3irQh4mhA7rgzXH
+    tN0jCw7pjMykTaMVA569hdgBVgihAZs3ivdtXaLuLtQW1cqlhDOXeGg21ZSk9Gi9
+    FU1AZLXezdCe3dNFoXquaza07rAMtQGBN1OxpxJB+1mqra/Ra3OzxiNyYHEO984u
+    XJe6aqyQMtjmJeYdYMq2xhuufLo44iBGjKhFBrnBljgrCjRSXP/bekNYQEem99cT
+    ZVHLEfR8BLLorJyJ8KpC/O4VkzNpnLc1gg2sU0hYS4TV48KONrdky+3rhV2CHIfx
+    wqnK5QuOWwt2V3IM0MUCAwEAAaNCMEAwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB
+    /wQFMAMBAf8wHQYDVR0OBBYEFJUxXCogmg/zoghBAJLz67o30AK5MA0GCSqGSIb3
+    DQEBCwUAA4IBAQAR8GXBZnSv7j7ITcKIIITWB59MvYVGv5a9cteKxmGdY15NeNMq
+    DchLYOkEIavhNmNa4XD1NQyoh/Y8xfwYY1CTY8h6BV1DHIDi7ETmuBxQZT7t6l2u
+    wdXu0nCUkOHGvBI1rO+rAt3fw1MaidifuTalFppbsgtWHxuvfe8aKQLNhn3G2b6d
+    yBmYCESE/u3oISyhIyQeTWeqP3LRJndPXZ32ktC9wL6PFIXs0xujG6n2CLLBSZPU
+    zrQW2xKtQOC1J6BSsNzE4gRRVFCR9P8C8m1U9YWcJhVCLcplLCApI+dmI8udEfIj
+    60Ew7vI0AdRLXGAF5GRyJjI2ivor4pZxOuhk
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"ca.crt":"-----BEGIN CERTIFICATE-----\nMIIC5zCCAc+gAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl\ncm5ldGVzMB4XDTIxMDYxNjA1NDAxMFoXDTMxMDYxNDA1NDAxMFowFTETMBEGA1UE\nAxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMDO\nROn6ynwI6aSBPh92CgzF9TMr246ip49Z+I5AyNBZZbyVhVjsi3irQh4mhA7rgzXH\ntN0jCw7pjMykTaMVA569hdgBVgihAZs3ivdtXaLuLtQW1cqlhDOXeGg21ZSk9Gi9\nFU1AZLXezdCe3dNFoXquaza07rAMtQGBN1OxpxJB+1mqra/Ra3OzxiNyYHEO984u\nXJe6aqyQMtjmJeYdYMq2xhuufLo44iBGjKhFBrnBljgrCjRSXP/bekNYQEem99cT\nZVHLEfR8BLLorJyJ8KpC/O4VkzNpnLc1gg2sU0hYS4TV48KONrdky+3rhV2CHIfx\nwqnK5QuOWwt2V3IM0MUCAwEAAaNCMEAwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB\n/wQFMAMBAf8wHQYDVR0OBBYEFJUxXCogmg/zoghBAJLz67o30AK5MA0GCSqGSIb3\nDQEBCwUAA4IBAQAR8GXBZnSv7j7ITcKIIITWB59MvYVGv5a9cteKxmGdY15NeNMq\nDchLYOkEIavhNmNa4XD1NQyoh/Y8xfwYY1CTY8h6BV1DHIDi7ETmuBxQZT7t6l2u\nwdXu0nCUkOHGvBI1rO+rAt3fw1MaidifuTalFppbsgtWHxuvfe8aKQLNhn3G2b6d\nyBmYCESE/u3oISyhIyQeTWeqP3LRJndPXZ32ktC9wL6PFIXs0xujG6n2CLLBSZPU\nzrQW2xKtQOC1J6BSsNzE4gRRVFCR9P8C8m1U9YWcJhVCLcplLCApI+dmI8udEfIj\n60Ew7vI0AdRLXGAF5GRyJjI2ivor4pZxOuhk\n-----END CERTIFICATE-----\n"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":"2021-07-29T15:45:43Z","labels":{"app.kubernetes.io/instance":"inventory-dest"},"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:data":{".":{},"f:ca.crt":{}}},"manager":"kube-controller-manager","operation":"Update","time":"2021-07-29T15:45:43Z"}],"name":"kube-root-ca.crt","namespace":"inventory-src","resourceVersion":"25892983","selfLink":"/api/v1/namespaces/inventory-src/configmaps/kube-root-ca.crt","uid":"53968527-2584-403c-844c-65abe3487041"}}
+  creationTimestamp: "2021-07-29T15:45:43Z"
+  labels:
+    app.kubernetes.io/instance: inventory-dest
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:ca.crt: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-07-29T15:45:43Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/instance: {}
+    manager: argocd-application-controller
+    operation: Update
+    time: "2021-08-30T18:58:57Z"
+  name: kube-root-ca.crt
+  namespace: inventory-src
+  resourceVersion: "49344429"
+  selfLink: /api/v1/namespaces/inventory-src/configmaps/kube-root-ca.crt
+  uid: 53968527-2584-403c-844c-65abe3487041
