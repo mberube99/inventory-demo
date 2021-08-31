@@ -44,7 +44,7 @@ metadata:
     operation: Update
     time: "2021-08-30T18:59:04Z"
   name: inventory
-  namespace: inventory-src
+  namespace: inventory-marco
   resourceVersion: "49344510"
   selfLink: /apis/extensions/v1beta1/namespaces/inventory-src/ingresses/inventory
   uid: b69457e7-f1d7-4429-afff-27bb7666d1a1
@@ -58,7 +58,3 @@ spec:
           servicePort: 8080
         path: /
         pathType: Prefix
-status:
-  loadBalancer:
-    ingress:
-    - ip: 10.106.242.199

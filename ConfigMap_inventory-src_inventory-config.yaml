@@ -63,7 +63,7 @@ metadata:
     operation: Update
     time: "2021-08-30T18:58:57Z"
   name: inventory-config
-  namespace: inventory-src
+  namespace: inventory-marco
   resourceVersion: "49344428"
   selfLink: /api/v1/namespaces/inventory-src/configmaps/inventory-config
   uid: 8fe97be6-a4e5-4307-9e2a-88f8ff352973

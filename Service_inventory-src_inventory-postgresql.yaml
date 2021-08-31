@@ -57,13 +57,11 @@ metadata:
     operation: Update
     time: "2021-08-30T18:59:03Z"
   name: inventory-postgresql
-  namespace: inventory-src
+  namespace: inventory-marco
   resourceVersion: "49344484"
   selfLink: /api/v1/namespaces/inventory-src/services/inventory-postgresql
   uid: 3e9f7635-c271-4d4e-8ef1-4803bc79d420
 spec:
-  clusterIPs:
-  - 10.103.241.216
   ports:
   - name: tcp-postgresql
     port: 5432
@@ -75,5 +73,3 @@ spec:
     role: primary
   sessionAffinity: None
   type: ClusterIP
-status:
-  loadBalancer: {}

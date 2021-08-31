@@ -60,7 +60,7 @@ metadata:
     operation: Update
     time: "2021-08-30T18:59:03Z"
   name: inventory-postgresql-headless
-  namespace: inventory-src
+  namespace: inventory-marco
   resourceVersion: "49344483"
   selfLink: /api/v1/namespaces/inventory-src/services/inventory-postgresql-headless
   uid: 59980784-9f93-4088-b510-7c3a81a00d10
@@ -79,5 +79,3 @@ spec:
     app.kubernetes.io/name: postgresql
   sessionAffinity: None
   type: ClusterIP
-status:
-  loadBalancer: {}

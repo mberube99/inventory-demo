@@ -55,13 +55,11 @@ metadata:
     operation: Update
     time: "2021-08-30T18:59:03Z"
   name: inventory
-  namespace: inventory-src
+  namespace: inventory-marco
   resourceVersion: "49344480"
   selfLink: /api/v1/namespaces/inventory-src/services/inventory
   uid: 51712839-88be-44fa-90ec-6e3fe088273e
 spec:
-  clusterIPs:
-  - 10.99.103.83
   ports:
   - name: web
     port: 8080
@@ -71,5 +69,3 @@ spec:
     deployment: inventory
   sessionAffinity: None
   type: ClusterIP
-status:
-  loadBalancer: {}

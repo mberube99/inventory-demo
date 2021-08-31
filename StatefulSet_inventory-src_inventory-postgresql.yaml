@@ -207,18 +207,6 @@ metadata:
   - apiVersion: apps/v1
     fieldsType: FieldsV1
     fieldsV1:
-      f:status:
-        f:collisionCount: {}
-        f:currentRevision: {}
-        f:observedGeneration: {}
-        f:replicas: {}
-        f:updateRevision: {}
-    manager: kube-controller-manager
-    operation: Update
-    time: "2021-08-15T20:27:20Z"
-  - apiVersion: apps/v1
-    fieldsType: FieldsV1
-    fieldsV1:
       f:metadata:
         f:annotations:
           f:kubectl.kubernetes.io/last-applied-configuration: {}
@@ -227,9 +215,24 @@ metadata:
     manager: argocd-application-controller
     operation: Update
     time: "2021-08-30T18:59:04Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:collisionCount: {}
+        f:currentReplicas: {}
+        f:currentRevision: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updateRevision: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-08-31T16:21:14Z"
   name: inventory-postgresql
-  namespace: inventory-src
-  resourceVersion: "49706210"
+  namespace: inventory-marco
+  resourceVersion: "49996420"
   selfLink: /apis/apps/v1/namespaces/inventory-src/statefulsets/inventory-postgresql
   uid: acc65cbd-3dc8-4f09-a490-91f60afcde73
 spec:
@@ -381,9 +384,3 @@ spec:
       volumeMode: Filesystem
     status:
       phase: Pending
-status:
-  collisionCount: 0
-  currentRevision: inventory-postgresql-866c8bbc4b
-  observedGeneration: 1
-  replicas: 1
-  updateRevision: inventory-postgresql-866c8bbc4b

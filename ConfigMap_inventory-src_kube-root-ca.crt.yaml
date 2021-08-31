@@ -51,7 +51,7 @@ metadata:
     operation: Update
     time: "2021-08-30T18:58:57Z"
   name: kube-root-ca.crt
-  namespace: inventory-src
+  namespace: inventory-marco
   resourceVersion: "49344429"
   selfLink: /api/v1/namespaces/inventory-src/configmaps/kube-root-ca.crt
   uid: 53968527-2584-403c-844c-65abe3487041

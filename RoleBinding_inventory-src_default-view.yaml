@@ -27,7 +27,7 @@ metadata:
     operation: Update
     time: "2021-08-30T18:58:57Z"
   name: default-view
-  namespace: inventory-src
+  namespace: inventory-marco
   resourceVersion: "49344437"
   selfLink: /apis/rbac.authorization.k8s.io/v1/namespaces/inventory-src/rolebindings/default-view
   uid: b6e7d822-8af3-48ca-a8ed-d3e7e752e20d
