@@ -7,58 +7,12 @@ metadata:
       {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"description":"The web server's http port","meta.helm.sh/release-name":"inventory","meta.helm.sh/release-namespace":"inventory-src"},"creationTimestamp":"2021-08-15T20:26:28Z","labels":{"app":"inventory","app.kubernetes.io/instance":"inventory-dest","app.kubernetes.io/managed-by":"Helm"},"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:description":{},"f:meta.helm.sh/release-name":{},"f:meta.helm.sh/release-namespace":{}},"f:labels":{".":{},"f:app":{},"f:app.kubernetes.io/managed-by":{}}},"f:spec":{"f:ports":{".":{},"k:{\"port\":8080,\"protocol\":\"TCP\"}":{".":{},"f:name":{},"f:port":{},"f:protocol":{},"f:targetPort":{}}},"f:selector":{".":{},"f:deployment":{}},"f:sessionAffinity":{},"f:type":{}}},"manager":"helm","operation":"Update","time":"2021-08-15T20:26:28Z"}],"name":"inventory","namespace":"inventory-src","resourceVersion":"38417059","selfLink":"/api/v1/namespaces/inventory-src/services/inventory","uid":"51712839-88be-44fa-90ec-6e3fe088273e"},"spec":{"clusterIPs":["10.99.103.83"],"ports":[{"name":"web","port":8080,"protocol":"TCP","targetPort":8080}],"selector":{"deployment":"inventory"},"sessionAffinity":"None","type":"ClusterIP"},"status":{"loadBalancer":{}}}
     meta.helm.sh/release-name: inventory
     meta.helm.sh/release-namespace: inventory-src
-  creationTimestamp: "2021-08-15T20:26:28Z"
   labels:
     app: inventory
     app.kubernetes.io/instance: inventory-dest
-    app.kubernetes.io/managed-by: Helm
-  managedFields:
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          .: {}
-          f:description: {}
-          f:meta.helm.sh/release-name: {}
-          f:meta.helm.sh/release-namespace: {}
-        f:labels:
-          .: {}
-          f:app: {}
-          f:app.kubernetes.io/managed-by: {}
-      f:spec:
-        f:ports:
-          .: {}
-          k:{"port":8080,"protocol":"TCP"}:
-            .: {}
-            f:name: {}
-            f:port: {}
-            f:protocol: {}
-            f:targetPort: {}
-        f:selector:
-          .: {}
-          f:deployment: {}
-        f:sessionAffinity: {}
-        f:type: {}
-    manager: helm
-    operation: Update
-    time: "2021-08-15T20:26:28Z"
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          f:kubectl.kubernetes.io/last-applied-configuration: {}
-        f:labels:
-          f:app.kubernetes.io/instance: {}
-    manager: argocd-application-controller
-    operation: Update
-    time: "2021-08-30T18:59:03Z"
   name: inventory
   namespace: inventory-marco
-  resourceVersion: "49344480"
   selfLink: /api/v1/namespaces/inventory-src/services/inventory
-  uid: 51712839-88be-44fa-90ec-6e3fe088273e
 spec:
   ports:
   - name: web

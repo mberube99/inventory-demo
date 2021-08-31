@@ -1,36 +1,11 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  creationTimestamp: "2021-07-29T15:58:22Z"
   labels:
     app.kubernetes.io/instance: inventory-dest
-  managedFields:
-  - apiVersion: rbac.authorization.k8s.io/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:roleRef:
-        f:apiGroup: {}
-        f:kind: {}
-        f:name: {}
-      f:subjects: {}
-    manager: kubectl-create
-    operation: Update
-    time: "2021-07-29T15:58:22Z"
-  - apiVersion: rbac.authorization.k8s.io/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:labels:
-          .: {}
-          f:app.kubernetes.io/instance: {}
-    manager: argocd-application-controller
-    operation: Update
-    time: "2021-08-30T18:58:57Z"
   name: default-view
   namespace: inventory-marco
-  resourceVersion: "49344437"
   selfLink: /apis/rbac.authorization.k8s.io/v1/namespaces/inventory-src/rolebindings/default-view
-  uid: b6e7d822-8af3-48ca-a8ed-d3e7e752e20d
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
