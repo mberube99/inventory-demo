@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: cpu-limit-range
+  namespace: inventory-prod
+  selfLink: /api/v1/namespaces/inventory-src/limitranges/cpu-limit-range
+spec:
+  limits:
+  - default:
+      cpu: 1500m
+      memory: 2Gi
+    defaultRequest:
+      cpu: 1500m
+      memory: 2Gi
+    type: Container
