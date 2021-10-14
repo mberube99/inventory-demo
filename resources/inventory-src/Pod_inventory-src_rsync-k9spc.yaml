@@ -1,0 +1,109 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "cbr0",
+          "interface": "eth0",
+          "ips": [
+              "10.233.65.221"
+          ],
+          "mac": "e6:46:ab:9c:4f:95",
+          "default": true,
+          "dns": {}
+      }]
+    k8s.v1.cni.cncf.io/networks-status: |-
+      [{
+          "name": "cbr0",
+          "interface": "eth0",
+          "ips": [
+              "10.233.65.221"
+          ],
+          "mac": "e6:46:ab:9c:4f:95",
+          "default": true,
+          "dns": {}
+      }]
+    kubernetes.io/limit-ranger: 'LimitRanger plugin set: cpu, memory request for container
+      rsync; cpu, memory limit for container rsync'
+  generateName: rsync-
+  labels:
+    app: crane2
+  name: rsync-k9spc
+  namespace: inventory-prod
+  selfLink: /api/v1/namespaces/inventory-src/pods/rsync-k9spc
+spec:
+  containers:
+  - command:
+    - /bin/bash
+    - -c
+    - trap "touch /usr/share/rsync/rsync-client-container-done" EXIT SIGINT SIGTERM;
+      timeout=120; SECONDS=0; while [ $SECONDS -lt $timeout ]; do /usr/bin/rsync --recursive
+      --links --perms --devices --specials --times --owner --group --human-readable
+      --log-file=/dev/stdout --info=COPY2,DEL2,REMOVE2,SKIP2,FLIST2,PROGRESS2,STATS2
+      /mnt/inventory-src/e014b7030e0617f795446986efdab054/ rsync://root@data-inventory-postgresql-0.inventory-prod.svc.cluster.local/e014b7030e0617f795446986efdab054
+      --port 2222; rc=$?; done; exit $rc;
+    env:
+    - name: RSYNC_PASSWORD
+    image: quay.io/konveyor/rsync-transfer:latest
+    imagePullPolicy: Always
+    name: rsync
+    resources:
+      limits:
+        cpu: 1500m
+        memory: 2Gi
+      requests:
+        cpu: 1500m
+        memory: 2Gi
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /mnt/inventory-src/e014b7030e0617f795446986efdab054
+      name: mnt
+    - mountPath: /usr/share/rsync
+      name: rsync-communication
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-rz5jd
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  preemptionPolicy: PreemptLowerPriority
+  restartPolicy: Never
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: mnt
+    persistentVolumeClaim:
+      claimName: data-inventory-postgresql-0
+  - emptyDir: {}
+    name: rsync-communication
+  - name: kube-api-access-rz5jd
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
