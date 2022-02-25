@@ -1,0 +1,51 @@
+apiVersion: v1
+data:
+  application.yaml: |
+    quarkus:
+      kubernetes-client:
+        trust-certs: true
+      kubernetes-config:
+        enabled: true
+        config-maps:
+          - inventory-config
+      hibernate-orm:
+        database:
+          generation: drop-and-create
+        sql-load-script: load.sql
+      datasource:
+        db-kind: postgresql
+        jdbc:
+          url: jdbc:postgresql://postgres:5432/inventory
+      log:
+        level: INFO
+      jaeger:
+        endpoint: http://jaeger-all-in-one-inmemory-collector:14268/api/traces
+        sampler-type: const
+        sampler-param: 1
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: app
+    meta.helm.sh/release-namespace: inventory
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:application.yaml: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:meta.helm.sh/release-name: {}
+          f:meta.helm.sh/release-namespace: {}
+        f:labels:
+          .: {}
+          f:app.kubernetes.io/managed-by: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2022-02-24T21:58:23Z"
+  name: inventory-config
+  namespace: inventory
